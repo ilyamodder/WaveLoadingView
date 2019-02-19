@@ -406,14 +406,6 @@ public class WaveLoadingView extends View {
 
                 float[] waveY = new float[endX];
 
-                wavePaint.setColor(adjustAlpha(mWaveColor, 0.3f));
-                for (int beginX = 0; beginX < endX; beginX++) {
-                    double wx = beginX * defaultAngularFrequency;
-                    float beginY = (float) (mDefaultWaterLevel + defaultAmplitude * Math.sin(wx));
-                    canvas.drawLine(beginX, beginY, beginX, endY, wavePaint);
-                    waveY[beginX] = beginY;
-                }
-
                 wavePaint.setColor(mWaveColor);
                 final int wave2Shift = (int) (defaultWaveLength / 4);
                 for (int beginX = 0; beginX < endX; beginX++) {
